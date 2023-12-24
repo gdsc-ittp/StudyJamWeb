@@ -1,0 +1,44 @@
+<html>
+  <body>
+    <ul class="items">
+      <li class="item">Item 1</li>
+      <li class="item">Item 2</li>
+      <li class="item">Item 3</li>
+    </ul>
+    <div></div>
+    <script>
+      // Add text content
+      const ul = document.querySelector(".items");
+      console.log(ul);
+      ul.firstElementChild.textContent = "Good afternoon";
+      ul.children[1].innerText = "Good morning";
+
+      // Add HTML Content
+      ul.lastElementChild.innerHTML = "<i>Good evening</i>";
+
+      // Append an item
+      const li = document.createElement("li");
+      const innerhtml = (li.textContent = "Hello World");
+      const classli = li.classList.add("item");
+      ul.appendChild(li);
+      console.log(ul);
+
+      // Replace child element
+      const li2 = document.createElement("li");
+      const innerhtml2 = (li2.textContent = "Hello ");
+      ul.replaceChild(li2, ul.children[1]);
+      console.log(ul);
+
+      // Remove child element
+      //   ul.remove();
+      ul.firstElementChild.remove();
+
+      // Add Style
+      const divStyle = document.querySelector("div");
+      divStyle.style.backgroundColor = "blue";
+      divStyle.style.border = "2px solid black";
+      divStyle.style.width = "80px";
+      divStyle.style.height = "50px";
+    </script>
+  </body>
+</html>

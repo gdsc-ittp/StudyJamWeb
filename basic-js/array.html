@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      const fruits = ["Apple", "Orange", "Pear"];
+      console.log(fruits[0]);
+
+      //Add Items
+      const barang = ["Mouse", "Laptop"];
+      barang.push("Gitar");
+      console.log(barang);
+      barang.push(1230);
+      console.log(barang);
+
+      barang.unshift("Headphone");
+      console.log(barang);
+
+      // Removing Items
+      barang.pop();
+      console.log(barang);
+      barang.shift();
+      console.log(barang);
+
+      // For of
+      for (const fruit of fruits) {
+        console.log(fruit);
+      }
+    </script>
+  </body>
+</html>

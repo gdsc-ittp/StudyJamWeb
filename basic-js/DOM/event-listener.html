@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <button>Click Me</button>
+    <p>0</p>
+  </body>
+  <script>
+    const button = document.querySelector("button");
+    const p = document.querySelector("p");
+    let i = 1;
+    button.addEventListener("click", function (e) {
+      p.innerText = i++;
+    });
+
+    button.addEventListener("click", (event) => alert("Sakit!!"));
+  </script>
+</html>

@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <button class="btn">Click Me</button>
+    <br><br>
+    <form class="myform">
+        <label>Name: </label>
+        <input type="text" />
+      </form>
+      <div class="output"></div>
+  </body>
+  <script>
+    const button = document.querySelector(".btn");
+
+    button.addEventListener("click", buttonClick);
+
+    function buttonClick(e) {
+      console.log(e);
+      console.log(e.target);
+      console.log(e.target.className);
+      console.log(e.type);
+    }
+
+    //event.target.value
+    const itemInput = document.querySelector("input[type=text]");
+
+    itemInput.addEventListener("keydown", myEvent);
+
+    function myEvent(e) {
+      console.log(e.target.value);
+      document.querySelector(".output").innerText = e.target.value;
+    }
+  </script>
+</html>

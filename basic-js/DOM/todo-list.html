@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <style>
+      body {
+        background-color: #e9e9e9;
+      }
+      .container {
+        width: 20%;
+        margin: 50px auto;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 34px;
+        text-align: center;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+      .done {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h2>Todo List</h2>
+        <form action="#">
+          <input type="text" id="new_text" />
+          <button onclick="add()">Add</button>
+        </form>
+      </div>
+
+      <ul id="todo"></ul>
+    </div>
+
+    <script>
+      const todo = document.getElementById("todo");
+      let newText = document.getElementById("new_text");
+      /** Fitur Todo
+       * 1.Menambahkan todo
+       * 2. Coret setelah selesai
+       * 3. Hapus todo
+       **/
+      function add() {
+        // perbaikan bug prevent defaut nya agar form nya tidak merefresh saat pertama kali menambahkan todo. jelaskan di akhir
+        // event.preventDefault();
+        // 1. Ambil value dari textnya
+        // 2. tambahkan list baru ke dalam ul
+        const listItem = document.createElement("li");
+        const listText = document.createElement("span");
+        const listBtn = document.createElement("button");
+
+        listItem.appendChild(listText);
+        listText.setAttribute("onclick", "toggle(this)");
+        listText.textContent = newText.value;
+        listItem.appendChild(listBtn);
+        listBtn.setAttribute("onclick", "removeItem(this)");
+        listBtn.textContent = "Delete";
+        todo.insertBefore(listItem, todo.firstChild);
+
+        // 3. Kosongkan field nya
+        newText.value = "";
+        newText.focus();
+      }
+
+      function toggle(el) {
+        el.classList.toggle("done");
+      }
+
+      function removeItem(el) {
+        el.parentElement.remove();
+      }
+    </script>
+  </body>
+</html>

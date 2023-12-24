@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <section>
+      <img src="dinosaur.png" />
+      <p>Saya Ingin menjadi dinosaurus</p>
+      <div id="box1"></div>
+
+      <div class="boxes"></div>
+      <div class="boxes"></div>
+      <div class="boxes"></div>
+
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </section>
+
+    <script>
+      console.log(document);
+
+      const box1 = document.getElementById("box1");
+      box1.innerHTML = "<b>Ini adalah text baru</b>";
+      console.log(box1);
+
+      const para = document.querySelector("p");
+      para.textContent = "Saya tidak ingin menjadi dinosaurus";
+
+      let boxes = document.getElementsByClassName("boxes");
+      boxes[0].innerHTML = "Paragraf 1";
+      boxes[1].innerHTML = "Paragraf 2";
+      boxes[2].innerHTML = "Paragraf 3";
+
+      for (let box of boxes) {
+        box.style.color = "Red";
+      }
+    </script>
+  </body>
+</html>
